@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="142d19f9f427418880796d8af0592746" Name="Diagram1">
+        <EntityTypeShape EntityType="quanlydiemModel.BACDAOTAO" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="quanlydiemModel.DIEM" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="quanlydiemModel.HOCKY" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="quanlydiemModel.KHOA" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="quanlydiemModel.LOAIHINHDAOTAO" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="quanlydiemModel.LOP" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="quanlydiemModel.MONHOC" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="quanlydiemModel.NGANH" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="quanlydiemModel.NIENKHOA" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="quanlydiemModel.SINHVIEN" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <AssociationConnector Association="quanlydiemModel.FK_DIEM_HOCKY" ManuallyRouted="false" />
+        <AssociationConnector Association="quanlydiemModel.FK_DIEM_MONHOC" ManuallyRouted="false" />
+        <AssociationConnector Association="quanlydiemModel.FK_DIEM_SINHVIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="quanlydiemModel.FK_HOCKY_NIENKHOA" ManuallyRouted="false" />
+        <AssociationConnector Association="quanlydiemModel.FK_LOP_KHOA" ManuallyRouted="false" />
+        <AssociationConnector Association="quanlydiemModel.FK_NGANH_KHOA" ManuallyRouted="false" />
+        <AssociationConnector Association="quanlydiemModel.FK_MONHOC_LOP" ManuallyRouted="false" />
+        <AssociationConnector Association="quanlydiemModel.FK_NIENKHOA_SINHVIEN" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

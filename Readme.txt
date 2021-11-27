@@ -1,9 +1,0 @@
-pip install mtcnn
-pip install tensorflow
-pip install opencv-python
-pip install scikit-image
-pip install imutils
-pip install matplotlib
-pip install pillow
-pip install numpy
-pip install svm

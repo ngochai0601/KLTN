@@ -1,0 +1,54 @@
+C:\Users\Admin\Desktop\KLTN\DetectFace\bin\Debug\DetectFace.exe.config
+C:\Users\Admin\Desktop\KLTN\DetectFace\bin\Debug\DetectFace.exe
+C:\Users\Admin\Desktop\KLTN\DetectFace\bin\Debug\DetectFace.pdb
+C:\Users\Admin\Desktop\KLTN\DetectFace\obj\Debug\DetectFace.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\KLTN\DetectFace\obj\Debug\DetectFace.Detect.resources
+C:\Users\Admin\Desktop\KLTN\DetectFace\obj\Debug\DetectFace.frm_Main.resources
+C:\Users\Admin\Desktop\KLTN\DetectFace\obj\Debug\DetectFace.Properties.Resources.resources
+C:\Users\Admin\Desktop\KLTN\DetectFace\obj\Debug\DetectFace.csproj.GenerateResource.Cache
+C:\Users\Admin\Desktop\KLTN\DetectFace\obj\Debug\DetectFace.exe
+C:\Users\Admin\Desktop\KLTN\DetectFace\obj\Debug\DetectFace.pdb
+C:\Users\Admin\Desktop\KLTN\DetectFace\bin\Debug\AForge.dll
+C:\Users\Admin\Desktop\KLTN\DetectFace\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\Admin\Desktop\KLTN\DetectFace\bin\Debug\AForge.Video.dll
+C:\Users\Admin\Desktop\KLTN\DetectFace\bin\Debug\AForge.xml
+C:\Users\Admin\Desktop\KLTN\DetectFace\bin\Debug\AForge.Video.xml
+C:\Users\Admin\Desktop\KLTN\DetectFace\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\Admin\Desktop\KLTN\DetectFace\obj\Debug\DetectFace.ThongTinSinhVien.resources
+C:\Users\Admin\Desktop\New folder (2)\KLTN\DetectFace\bin\Debug\DetectFace.exe.config
+C:\Users\Admin\Desktop\New folder (2)\KLTN\DetectFace\obj\Debug\DetectFace.exe
+C:\Users\Admin\Desktop\New folder (2)\KLTN\DetectFace\obj\Debug\DetectFace.pdb
+C:\Users\Admin\Desktop\New folder (2)\KLTN\DetectFace\bin\Debug\DetectFace.exe
+C:\Users\Admin\Desktop\New folder (2)\KLTN\DetectFace\bin\Debug\DetectFace.pdb
+C:\Users\Admin\Desktop\New folder (2)\KLTN\DetectFace\bin\Debug\AForge.dll
+C:\Users\Admin\Desktop\New folder (2)\KLTN\DetectFace\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\Admin\Desktop\New folder (2)\KLTN\DetectFace\bin\Debug\AForge.Video.dll
+C:\Users\Admin\Desktop\New folder (2)\KLTN\DetectFace\bin\Debug\AForge.xml
+C:\Users\Admin\Desktop\New folder (2)\KLTN\DetectFace\bin\Debug\AForge.Video.xml
+C:\Users\Admin\Desktop\New folder (2)\KLTN\DetectFace\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\Admin\Desktop\New folder (2)\KLTN\DetectFace\obj\Debug\DetectFace.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\New folder (2)\KLTN\DetectFace\obj\Debug\DetectFace.Detect.resources
+C:\Users\Admin\Desktop\New folder (2)\KLTN\DetectFace\obj\Debug\DetectFace.frm_Main.resources
+C:\Users\Admin\Desktop\New folder (2)\KLTN\DetectFace\obj\Debug\DetectFace.Properties.Resources.resources
+C:\Users\Admin\Desktop\New folder (2)\KLTN\DetectFace\obj\Debug\DetectFace.ThongTinSinhVien.resources
+C:\Users\Admin\Desktop\New folder (2)\KLTN\DetectFace\obj\Debug\DetectFace.csproj.GenerateResource.Cache
+C:\Users\Admin\Desktop\KLTN\DetectFace_KLTN\bin\Debug\DetectFace.exe.config
+C:\Users\Admin\Desktop\KLTN\DetectFace_KLTN\obj\Debug\DetectFace.exe
+C:\Users\Admin\Desktop\KLTN\DetectFace_KLTN\obj\Debug\DetectFace.pdb
+C:\Users\Admin\Desktop\KLTN\DetectFace_KLTN\bin\Debug\DetectFace.exe
+C:\Users\Admin\Desktop\KLTN\DetectFace_KLTN\bin\Debug\DetectFace.pdb
+C:\Users\Admin\Desktop\KLTN\DetectFace_KLTN\bin\Debug\AForge.dll
+C:\Users\Admin\Desktop\KLTN\DetectFace_KLTN\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\Admin\Desktop\KLTN\DetectFace_KLTN\bin\Debug\AForge.Video.dll
+C:\Users\Admin\Desktop\KLTN\DetectFace_KLTN\bin\Debug\EntityFramework.dll
+C:\Users\Admin\Desktop\KLTN\DetectFace_KLTN\bin\Debug\AForge.xml
+C:\Users\Admin\Desktop\KLTN\DetectFace_KLTN\bin\Debug\AForge.Video.xml
+C:\Users\Admin\Desktop\KLTN\DetectFace_KLTN\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\Admin\Desktop\KLTN\DetectFace_KLTN\bin\Debug\EntityFramework.xml
+C:\Users\Admin\Desktop\KLTN\DetectFace_KLTN\obj\Debug\DetectFace.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\KLTN\DetectFace_KLTN\obj\Debug\DetectFace.Detect.resources
+C:\Users\Admin\Desktop\KLTN\DetectFace_KLTN\obj\Debug\DetectFace.frm_Main.resources
+C:\Users\Admin\Desktop\KLTN\DetectFace_KLTN\obj\Debug\DetectFace.Properties.Resources.resources
+C:\Users\Admin\Desktop\KLTN\DetectFace_KLTN\obj\Debug\DetectFace.ThongTinSinhVien.resources
+C:\Users\Admin\Desktop\KLTN\DetectFace_KLTN\obj\Debug\DetectFace.csproj.GenerateResource.Cache
+C:\Users\Admin\Desktop\KLTN\DetectFace_KLTN\obj\Debug\DetectFace.Loading.resources

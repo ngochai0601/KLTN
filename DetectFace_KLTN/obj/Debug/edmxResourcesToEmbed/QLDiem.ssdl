@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="quanlydiemModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="quanlydiemModelStoreContainer">
+    <EntitySet Name="BACDAOTAO" EntityType="quanlydiemModel.Store.BACDAOTAO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DIEM" EntityType="quanlydiemModel.Store.DIEM" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="HOCKY" EntityType="quanlydiemModel.Store.HOCKY" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KHOA" EntityType="quanlydiemModel.Store.KHOA" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LOAIHINHDAOTAO" EntityType="quanlydiemModel.Store.LOAIHINHDAOTAO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LOP" EntityType="quanlydiemModel.Store.LOP" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MONHOC" EntityType="quanlydiemModel.Store.MONHOC" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NGANH" EntityType="quanlydiemModel.Store.NGANH" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NIENKHOA" EntityType="quanlydiemModel.Store.NIENKHOA" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SINHVIEN" EntityType="quanlydiemModel.Store.SINHVIEN" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_DIEM_HOCKY" Association="quanlydiemModel.Store.FK_DIEM_HOCKY">
+      <End Role="HOCKY" EntitySet="HOCKY" />
+      <End Role="DIEM" EntitySet="DIEM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DIEM_MONHOC" Association="quanlydiemModel.Store.FK_DIEM_MONHOC">
+      <End Role="MONHOC" EntitySet="MONHOC" />
+      <End Role="DIEM" EntitySet="DIEM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DIEM_SINHVIEN" Association="quanlydiemModel.Store.FK_DIEM_SINHVIEN">
+      <End Role="SINHVIEN" EntitySet="SINHVIEN" />
+      <End Role="DIEM" EntitySet="DIEM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOCKY_NIENKHOA" Association="quanlydiemModel.Store.FK_HOCKY_NIENKHOA">
+      <End Role="NIENKHOA" EntitySet="NIENKHOA" />
+      <End Role="HOCKY" EntitySet="HOCKY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LOP_KHOA" Association="quanlydiemModel.Store.FK_LOP_KHOA">
+      <End Role="KHOA" EntitySet="KHOA" />
+      <End Role="LOP" EntitySet="LOP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MONHOC_LOP" Association="quanlydiemModel.Store.FK_MONHOC_LOP">
+      <End Role="LOP" EntitySet="LOP" />
+      <End Role="MONHOC" EntitySet="MONHOC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NGANH_KHOA" Association="quanlydiemModel.Store.FK_NGANH_KHOA">
+      <End Role="KHOA" EntitySet="KHOA" />
+      <End Role="NGANH" EntitySet="NGANH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NIENKHOA_SINHVIEN" Association="quanlydiemModel.Store.FK_NIENKHOA_SINHVIEN">
+      <End Role="NIENKHOA" EntitySet="NIENKHOA" />
+      <End Role="SINHVIEN" EntitySet="SINHVIEN" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BACDAOTAO">
+    <Key>
+      <PropertyRef Name="MABACDAOTAO" />
+    </Key>
+    <Property Name="MABACDAOTAO" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="TENBACDAOTAO" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DIEM">
+    <Key>
+      <PropertyRef Name="MASV" />
+      <PropertyRef Name="MAMH" />
+    </Key>
+    <Property Name="MASV" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="MAMH" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="DIEMTL" Type="float" />
+    <Property Name="DIEMGK" Type="float" />
+    <Property Name="DIEMKT1" Type="float" />
+    <Property Name="DIEMKT2" Type="float" />
+    <Property Name="MAHOCKY" Type="int" />
+  </EntityType>
+  <EntityType Name="HOCKY">
+    <Key>
+      <PropertyRef Name="MAHOCKY" />
+    </Key>
+    <Property Name="MAHOCKY" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MANIENKHOA" Type="int" />
+    <Property Name="HK" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="KHOA">
+    <Key>
+      <PropertyRef Name="MAKH" />
+    </Key>
+    <Property Name="MAKH" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="TENKH" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LOAIHINHDAOTAO">
+    <Key>
+      <PropertyRef Name="MALOAIHINHDAOTAO" />
+    </Key>
+    <Property Name="MALOAIHINHDAOTAO" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="TENLOAIHINHDAOTAO" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LOP">
+    <Key>
+      <PropertyRef Name="MALOP" />
+    </Key>
+    <Property Name="MALOP" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="MAKH" Type="varchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="MONHOC">
+    <Key>
+      <PropertyRef Name="MAMH" />
+    </Key>
+    <Property Name="MAMH" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="MALOP" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="TENMH" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="SOTC" Type="int" />
+  </EntityType>
+  <EntityType Name="NGANH">
+    <Key>
+      <PropertyRef Name="MANGANH" />
+    </Key>
+    <Property Name="MANGANH" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="MAKH" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="TENNGANH" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="NIENKHOA">
+    <Key>
+      <PropertyRef Name="MANIENKHOA" />
+    </Key>
+    <Property Name="MANIENKHOA" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NAMBATDAU" Type="int" />
+    <Property Name="NAMKETTHUC" Type="int" />
+  </EntityType>
+  <EntityType Name="SINHVIEN">
+    <Key>
+      <PropertyRef Name="MASV" />
+    </Key>
+    <Property Name="MASV" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="MANGANH" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="MALOP" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="HOTEN" Type="nvarchar" MaxLength="50" />
+    <Property Name="NGSINH" Type="date" />
+    <Property Name="GTINH" Type="nvarchar" MaxLength="3" />
+    <Property Name="NOISINH" Type="nvarchar" MaxLength="50" />
+    <Property Name="MABACDAOTAO" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="MALOAIHINHDAOTAO" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="MANIENKHOA" Type="int" Nullable="false" />
+    <Property Name="HINH" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_DIEM_HOCKY">
+    <End Role="HOCKY" Type="quanlydiemModel.Store.HOCKY" Multiplicity="0..1" />
+    <End Role="DIEM" Type="quanlydiemModel.Store.DIEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOCKY">
+        <PropertyRef Name="MAHOCKY" />
+      </Principal>
+      <Dependent Role="DIEM">
+        <PropertyRef Name="MAHOCKY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DIEM_MONHOC">
+    <End Role="MONHOC" Type="quanlydiemModel.Store.MONHOC" Multiplicity="1" />
+    <End Role="DIEM" Type="quanlydiemModel.Store.DIEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MONHOC">
+        <PropertyRef Name="MAMH" />
+      </Principal>
+      <Dependent Role="DIEM">
+        <PropertyRef Name="MAMH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DIEM_SINHVIEN">
+    <End Role="SINHVIEN" Type="quanlydiemModel.Store.SINHVIEN" Multiplicity="1" />
+    <End Role="DIEM" Type="quanlydiemModel.Store.DIEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SINHVIEN">
+        <PropertyRef Name="MASV" />
+      </Principal>
+      <Dependent Role="DIEM">
+        <PropertyRef Name="MASV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOCKY_NIENKHOA">
+    <End Role="NIENKHOA" Type="quanlydiemModel.Store.NIENKHOA" Multiplicity="0..1" />
+    <End Role="HOCKY" Type="quanlydiemModel.Store.HOCKY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NIENKHOA">
+        <PropertyRef Name="MANIENKHOA" />
+      </Principal>
+      <Dependent Role="HOCKY">
+        <PropertyRef Name="MANIENKHOA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LOP_KHOA">
+    <End Role="KHOA" Type="quanlydiemModel.Store.KHOA" Multiplicity="1" />
+    <End Role="LOP" Type="quanlydiemModel.Store.LOP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHOA">
+        <PropertyRef Name="MAKH" />
+      </Principal>
+      <Dependent Role="LOP">
+        <PropertyRef Name="MAKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MONHOC_LOP">
+    <End Role="LOP" Type="quanlydiemModel.Store.LOP" Multiplicity="1" />
+    <End Role="MONHOC" Type="quanlydiemModel.Store.MONHOC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOP">
+        <PropertyRef Name="MALOP" />
+      </Principal>
+      <Dependent Role="MONHOC">
+        <PropertyRef Name="MALOP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NGANH_KHOA">
+    <End Role="KHOA" Type="quanlydiemModel.Store.KHOA" Multiplicity="1" />
+    <End Role="NGANH" Type="quanlydiemModel.Store.NGANH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHOA">
+        <PropertyRef Name="MAKH" />
+      </Principal>
+      <Dependent Role="NGANH">
+        <PropertyRef Name="MAKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NIENKHOA_SINHVIEN">
+    <End Role="NIENKHOA" Type="quanlydiemModel.Store.NIENKHOA" Multiplicity="1" />
+    <End Role="SINHVIEN" Type="quanlydiemModel.Store.SINHVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NIENKHOA">
+        <PropertyRef Name="MANIENKHOA" />
+      </Principal>
+      <Dependent Role="SINHVIEN">
+        <PropertyRef Name="MANIENKHOA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

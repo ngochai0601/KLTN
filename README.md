@@ -4,3 +4,4 @@
 - KFold_SVM.py dùng để tìm param tốt nhất cho model
 - KFoldCross.py dùng để train và validate model khi dữ liệu ít
 - my_server.py dùng để dựng một cái server api xử lý truyền dữ liệu từ giao diện xuống
+- Readme.txt các thư viện cần cài

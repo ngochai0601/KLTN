@@ -7,3 +7,5 @@ pip install matplotlib
 pip install pillow
 pip install numpy
 pip install svm
+pip install flask
+pip install flask-cors

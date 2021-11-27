@@ -1,0 +1,27 @@
+﻿body {
+}
+.header h1{
+    text-align: center;
+}
+.left {
+    width: 29%;
+    float: left;
+}
+.content img{
+    width: 150px;
+    height: 150px;
+    margin-left: 0px;
+    margin-top: 50px;
+}
+    .content input {
+        margin-left: 0px;
+        margin-top: 27px;
+    }
+.right {
+    width: 70%;
+    float: right;
+}
+.content{
+    width: 100%;
+
+}

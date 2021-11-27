@@ -7,4 +7,4 @@
 - my_server.py dùng để dựng một cái server api xử lý truyền dữ liệu qua lại giữa giao diện và server
 - lib.txt các thư viện cần cài
 - TraCuuDiem_UD là phần mềm tra cứu điểm 
-- TraCuuDiem_Web là web size tra cứu điểm
+- TraCuuDiem_Web là website tra cứu điểm

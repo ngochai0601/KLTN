@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "Score";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using TraCuuDiem.Models
+@model List<XemDiem>
+<link href="~/Content/css/Score.css" rel="stylesheet" />
+<div class="header">
+    <h1 class="auto-style1">Kết Quả Học Tập</h1>
+</div>
+<table class="table" style="width:100%;">
+    <thead>
+        <tr>
+            <th rowspan="2" style="width:100px !important" lang="kqht-stt" class="sorting_disabled"><div>STT</div></th>
+            <th rowspan="2" style="width: 200px !important; min-width: 200px !important" lang="kqht-malhp" class="sorting_disabled"><div>Mã môn học</div></th>
+            <th rowspan="2" style="width:200px !important" lang="kqht-tenlhp" class="sorting_disabled"><div>Tên môn học/học phần</div></th>
+            <th rowspan="2" lang="kqht-lopdukien" class="sorting_disabled"><div>Lớp dự kiến</div></th>
+            <th rowspan="2" style="width:100px !important" lang="kqht-stc" class="sorting_disabled"><div>Số tín chỉ</div></th>
+            <th rowspan="2" lang="Row_1_4" class="sorting_disabled">
+                TL/BTL
+            </th>
+            <th rowspan="2" lang="Row_1_2" class="sorting_disabled">
+                Giữa kỳ
+            </th>
+            <th colspan="2" lang="Row_1_8">
+                Kết thúc
+            </th>
+            <th rowspan="2" lang="Row_1_10" class="sorting_disabled">
+                Điểm<br>tổng kết
+            </th>
+            <th rowspan="2" lang="DiemTinChi" class="sorting_disabled">Thang<br>điểm 4</th>
+            <th rowspan="2" lang="DiemChu" class="sorting_disabled">Điểm<br>chữ</th>
+            <th rowspan="2" lang="XepLoai" class="sorting_disabled">Xếp loại</th>
+        </tr>
+        <tr>
+            <th rowspan="1" lang="DiemThi1" class="sorting_disabled">1</th>
+            <th rowspan="1" lang="DiemThi2" class="sorting_disabled">2</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int i = 0;
+            foreach (XemDiem item in Model)
+            {
+
+                if (item.hk != null)
+                {
+                    i = 0;
+                    <tr role="row">
+
+                        <td colspan="13" class="text-left row-head">@item.hk</td>
+                        <td class="hidden"></td>
+                        <td class="hidden"></td>
+                        <td class="hidden"></td>
+                        <td class="hidden"></td>
+                        <td class="hidden"></td>
+                        <td class="hidden"></td>
+                        <td class="hidden"></td>
+                        <td class="hidden"></td>
+                        <td class="hidden"></td>
+                        <td class="hidden"></td>
+                        <td class="hidden"></td>
+                        <td class="hidden"></td>
+                    </tr>
+                }
+                else
+                {
+                    i = i + 1;
+                    <tr role="row">
+                        <td><div style="">@i</div></td>
+                        <td>
+                            <div style="">
+                                @item.mamh
+                            </div>
+                        </td>
+                        <td class="text-left"><div style="word-break: break-word;">@item.tenmh</div></td>
+                        <td style="" class="text-center"><div style="word-break: break-word;">@item.lopdukien</div></td>
+                        <td style="width:100px !important"><div style="display: inline-table">@item.tinchi</div></td>
+                        <td class="" title="DiemTieuLuan1">@item.TL</td>
+                        <td class="" title="DiemHeSo11">@item.GK</td>
+                        <td class="" title="DiemThi1">@item.KT1</td>
+                        <td class="" title="DiemThi2">@item.KT2</td>
+                        <td class="" title="DiemTongKet">@item.tongket</td>
+                        <td class="" title="DiemTinChi">@item.diem4</td>
+                        <td class="" title="DiemChu">@item.diemchu</td>
+                        <td class="" title="XepLoai">@item.xeploai</td>
+                    </tr>
+                }
+            }
+        }
+    </tbody>
+</table>

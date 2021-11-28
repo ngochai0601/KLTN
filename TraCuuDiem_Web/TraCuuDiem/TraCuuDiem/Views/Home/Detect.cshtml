@@ -1,0 +1,142 @@
+﻿@{
+    ViewBag.Title = "Detect";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using TraCuuDiem.Models
+@model SINHVIEN
+<style type="text/css">
+    body {
+    }
+
+    .header h1 {
+        text-align: center;
+    }
+
+    .left {
+        width: 29%;
+        float: left;
+    }
+
+    .content img {
+        width: 150px;
+        height: 150px;
+        margin-left: 0px;
+        margin-top: 50px;
+    }
+
+    .content input {
+        margin-left: 0px;
+        margin-top: 27px;
+    }
+
+    .right {
+        width: 70%;
+        float: right;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .auto-style1 {
+        font-weight: bold;
+    }
+
+    .auto-style2 {
+        margin-top: 40px;
+    }
+</style>
+<script>
+    function upload() {
+        var files = $('input[type=file]').get(0).files;
+        var formData = new FormData();
+        formData.append('file', files[0]);
+        $.ajax({
+            type: 'POST',
+            url: '/Home/FileUpload',
+            contentType: false,
+            processData: false,
+            data: formData,
+            success: function (urlImage) {
+                $('#imgin').attr('src', urlImage);
+            }, error: function (err) {
+                alert('Lỗi khi upload: ' + err.statusText);
+            }
+        });
+    }
+
+</script>
+<form action="/Home/Detect" method="POST" id="form1" runat="server">
+    <input id="masv" value="@ViewBag.MASV" style="display:none" />
+    <div class="header">
+        <h1 class="auto-style1">NHẬN DIỆN GƯƠNG MẶT</h1>
+    </div>
+    <div id="content" class="content">
+        <center>
+            <img id="imgin" src="#" /><br />
+            <input type="file" id="file" onchange="upload()" name="file" />
+            <br />
+            <input id="detect" type="submit" value="Nhận Diện" />
+        </center>
+    </div>
+    <div id="info">
+        <div class="left">
+            <img alt="" src="~/Content/hinhsv/@Model.HINH" style="height: 250px; width: 250px; margin-left: 84px; margin-top: 50px;" />
+        </div>
+
+        <div class="right">
+            <h3 class="auto-style2">Thông tin sinh viên</h3>
+            <p>
+                MSSV:&nbsp;
+                <label style="font-weight:bold">@Model.MASV</label>
+            </p>
+            <p>
+                Họ tên:
+                <label style="font-weight:bold">@Model.HOTEN</label>
+</p>
+            <p>
+                Giới tính:
+                <label style="font-weight:bold">@Model.GTINH</label>
+            </p>
+            <p>
+                Nơi sinh:
+                <label style="font-weight:bold">@Model.NOISINH</label>
+            </p>
+            <p>
+                Lớp học:
+                <label style="font-weight:bold">@Model.MALOP</label>
+            </p>
+            <p>
+                Khóa học:
+                <label style="font-weight:bold">@ViewBag.KH</label>
+            </p>
+            <p>
+                Bậc đào tạo:
+                <label style="font-weight:bold">@ViewBag.BDT</label>
+            </p>
+            <p>
+                Loại hình đào tạo:
+                <label style="font-weight:bold">@ViewBag.LHDT</label>
+            </p>
+            <p>
+                Ngành:
+                <label style="font-weight:bold">@ViewBag.NGANH</label>
+
+            </p>
+            <p>
+                <a href="@Url.Action("Score", "Home", new { masv = Model.MASV })" class="btn btn-success" style="width:270px;height:50px;border-radius:40px;text-transform:uppercase;">XEM KẾT QUẢ HỌC TẬP</a>
+            </p>
+        </div>
+    </div>
+</form>
+<script>
+    var masv = $('#masv').val()
+    if (masv == "") {
+        $('#info').hide()
+        $('#content').show()
+    }
+    else {
+        $('#info').show()
+        $('#content').hide()
+    }
+</script>

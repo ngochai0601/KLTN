@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="quanlydiemModelStoreContainer" CdmEntityContainer="quanlydiemEntities">
+    <EntitySetMapping Name="BACDAOTAOs">
+      <EntityTypeMapping TypeName="quanlydiemModel.BACDAOTAO">
+        <MappingFragment StoreEntitySet="BACDAOTAO">
+          <ScalarProperty Name="MABACDAOTAO" ColumnName="MABACDAOTAO" />
+          <ScalarProperty Name="TENBACDAOTAO" ColumnName="TENBACDAOTAO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DIEMs">
+      <EntityTypeMapping TypeName="quanlydiemModel.DIEM">
+        <MappingFragment StoreEntitySet="DIEM">
+          <ScalarProperty Name="MASV" ColumnName="MASV" />
+          <ScalarProperty Name="MAMH" ColumnName="MAMH" />
+          <ScalarProperty Name="DIEMTL" ColumnName="DIEMTL" />
+          <ScalarProperty Name="DIEMGK" ColumnName="DIEMGK" />
+          <ScalarProperty Name="DIEMKT1" ColumnName="DIEMKT1" />
+          <ScalarProperty Name="DIEMKT2" ColumnName="DIEMKT2" />
+          <ScalarProperty Name="MAHOCKY" ColumnName="MAHOCKY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HOCKies">
+      <EntityTypeMapping TypeName="quanlydiemModel.HOCKY">
+        <MappingFragment StoreEntitySet="HOCKY">
+          <ScalarProperty Name="MAHOCKY" ColumnName="MAHOCKY" />
+          <ScalarProperty Name="MANIENKHOA" ColumnName="MANIENKHOA" />
+          <ScalarProperty Name="HK" ColumnName="HK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KHOAs">
+      <EntityTypeMapping TypeName="quanlydiemModel.KHOA">
+        <MappingFragment StoreEntitySet="KHOA">
+          <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+          <ScalarProperty Name="TENKH" ColumnName="TENKH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOAIHINHDAOTAOs">
+      <EntityTypeMapping TypeName="quanlydiemModel.LOAIHINHDAOTAO">
+        <MappingFragment StoreEntitySet="LOAIHINHDAOTAO">
+          <ScalarProperty Name="MALOAIHINHDAOTAO" ColumnName="MALOAIHINHDAOTAO" />
+          <ScalarProperty Name="TENLOAIHINHDAOTAO" ColumnName="TENLOAIHINHDAOTAO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOPs">
+      <EntityTypeMapping TypeName="quanlydiemModel.LOP">
+        <MappingFragment StoreEntitySet="LOP">
+          <ScalarProperty Name="MALOP" ColumnName="MALOP" />
+          <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MONHOCs">
+      <EntityTypeMapping TypeName="quanlydiemModel.MONHOC">
+        <MappingFragment StoreEntitySet="MONHOC">
+          <ScalarProperty Name="MAMH" ColumnName="MAMH" />
+          <ScalarProperty Name="MALOP" ColumnName="MALOP" />
+          <ScalarProperty Name="TENMH" ColumnName="TENMH" />
+          <ScalarProperty Name="SOTC" ColumnName="SOTC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NGANHs">
+      <EntityTypeMapping TypeName="quanlydiemModel.NGANH">
+        <MappingFragment StoreEntitySet="NGANH">
+          <ScalarProperty Name="MANGANH" ColumnName="MANGANH" />
+          <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+          <ScalarProperty Name="TENNGANH" ColumnName="TENNGANH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NIENKHOAs">
+      <EntityTypeMapping TypeName="quanlydiemModel.NIENKHOA">
+        <MappingFragment StoreEntitySet="NIENKHOA">
+          <ScalarProperty Name="MANIENKHOA" ColumnName="MANIENKHOA" />
+          <ScalarProperty Name="NAMBATDAU" ColumnName="NAMBATDAU" />
+          <ScalarProperty Name="NAMKETTHUC" ColumnName="NAMKETTHUC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SINHVIENs">
+      <EntityTypeMapping TypeName="quanlydiemModel.SINHVIEN">
+        <MappingFragment StoreEntitySet="SINHVIEN">
+          <ScalarProperty Name="MASV" ColumnName="MASV" />
+          <ScalarProperty Name="MANGANH" ColumnName="MANGANH" />
+          <ScalarProperty Name="MALOP" ColumnName="MALOP" />
+          <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+          <ScalarProperty Name="NGSINH" ColumnName="NGSINH" />
+          <ScalarProperty Name="GTINH" ColumnName="GTINH" />
+          <ScalarProperty Name="NOISINH" ColumnName="NOISINH" />
+          <ScalarProperty Name="MABACDAOTAO" ColumnName="MABACDAOTAO" />
+          <ScalarProperty Name="MALOAIHINHDAOTAO" ColumnName="MALOAIHINHDAOTAO" />
+          <ScalarProperty Name="MANIENKHOA" ColumnName="MANIENKHOA" />
+          <ScalarProperty Name="HINH" ColumnName="HINH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="quanlydiemModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -14,7 +14,7 @@ namespace TraCuuDiem.Controllers
 {
     public class HomeController : Controller
     {
-       quanlydiemEntities qlDiem = new quanlydiemEntities();
+        quanlydiemEntities qlDiem = new quanlydiemEntities();
         public ActionResult Detect()
         {
             SINHVIEN sv = new SINHVIEN();
@@ -174,7 +174,7 @@ namespace TraCuuDiem.Controllers
             foreach (HOCKY hk in qlDiem.HOCKies.ToList())
             {
                 List<DIEM> diems = qlDiem.DIEMs.Where(x => x.MAHOCKY == hk.MAHOCKY && x.MASV == masv).ToList();
-                if (diems != null)
+                if (diems.Count != 0)
                 {
                     lst.Add(new XemDiem()
                     {
@@ -192,38 +192,39 @@ namespace TraCuuDiem.Controllers
                         diemchu = null,
                         xeploai = null
                     });
-                }
-                foreach (DIEM d in diems)
-                {
-                    double? tongket = 0;
-                    if (d.DIEMGK == null && d.DIEMTL != null)
+
+                    foreach (DIEM d in diems)
                     {
-                        tongket = (d.DIEMTL * 0.5) + (d.DIEMKT1 * 0.5);
+                        double? tongket = 0;
+                        if (d.DIEMGK == null && d.DIEMTL != null)
+                        {
+                            tongket = (d.DIEMTL * 0.5) + (d.DIEMKT1 * 0.5);
+                        }
+                        else if (d.DIEMGK == null && d.DIEMTL == null)
+                        {
+                            tongket = d.DIEMKT1;
+                        }
+                        string diemchu = DiemChu(tongket);
+                        string xeploai = XepLoai(diemchu);
+                        double diem4 = Diem4(tongket);
+                        MONHOC mh = qlDiem.MONHOCs.SingleOrDefault(x => x.MAMH == d.MAMH);
+                        lst.Add(new XemDiem()
+                        {
+                            hk = null,
+                            mamh = mh.MAMH,
+                            tenmh = mh.TENMH,
+                            tinchi = mh.SOTC.ToString(),
+                            lopdukien = mh.MALOP,
+                            TL = d.DIEMTL.ToString(),
+                            GK = d.DIEMGK.ToString(),
+                            KT1 = d.DIEMKT1.ToString(),
+                            KT2 = d.DIEMKT2.ToString(),
+                            tongket = tongket.ToString(),
+                            diem4 = diem4.ToString(),
+                            diemchu = diemchu,
+                            xeploai = xeploai
+                        });
                     }
-                    else if (d.DIEMGK == null && d.DIEMTL == null)
-                    {
-                        tongket = d.DIEMKT1;
-                    }
-                    string diemchu = DiemChu(tongket);
-                    string xeploai = XepLoai(diemchu);
-                    double diem4 = Diem4(tongket);
-                    MONHOC mh = qlDiem.MONHOCs.SingleOrDefault(x => x.MAMH == d.MAMH);
-                    lst.Add(new XemDiem()
-                    {
-                        hk = null,
-                        mamh = mh.MAMH,
-                        tenmh = mh.TENMH,
-                        tinchi = mh.SOTC.ToString(),
-                        lopdukien = mh.MALOP,
-                        TL = d.DIEMTL.ToString(),
-                        GK = d.DIEMGK.ToString(),
-                        KT1 = d.DIEMKT1.ToString(),
-                        KT2 = d.DIEMKT2.ToString(),
-                        tongket = tongket.ToString(),
-                        diem4 = diem4.ToString(),
-                        diemchu = diemchu,
-                        xeploai = xeploai
-                    });
                 }
             }
             return lst;

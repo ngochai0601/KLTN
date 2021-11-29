@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Score";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -9,7 +8,8 @@
 <div class="header">
     <h1 class="auto-style1">Kết Quả Học Tập</h1>
 </div>
-<table class="table" style="width:100%;">
+<center>
+<table class="table-custom" style="width:100%;">
     <thead>
         <tr>
             <th rowspan="2" style="width:100px !important" lang="kqht-stt" class="sorting_disabled"><div>STT</div></th>
@@ -50,44 +50,33 @@
                     <tr role="row">
 
                         <td colspan="13" class="text-left row-head">@item.hk</td>
-                        <td class="hidden"></td>
-                        <td class="hidden"></td>
-                        <td class="hidden"></td>
-                        <td class="hidden"></td>
-                        <td class="hidden"></td>
-                        <td class="hidden"></td>
-                        <td class="hidden"></td>
-                        <td class="hidden"></td>
-                        <td class="hidden"></td>
-                        <td class="hidden"></td>
-                        <td class="hidden"></td>
-                        <td class="hidden"></td>
                     </tr>
                 }
                 else
                 {
                     i = i + 1;
                     <tr role="row">
-                        <td><div style="">@i</div></td>
+                        <td><div style="width:100px !important;text-align:center">@i</div></td>
                         <td>
-                            <div style="">
+                            <div style="width: 200px !important; min-width: 200px !important;text-align:center">
                                 @item.mamh
                             </div>
                         </td>
-                        <td class="text-left"><div style="word-break: break-word;">@item.tenmh</div></td>
-                        <td style="" class="text-center"><div style="word-break: break-word;">@item.lopdukien</div></td>
-                        <td style="width:100px !important"><div style="display: inline-table">@item.tinchi</div></td>
-                        <td class="" title="DiemTieuLuan1">@item.TL</td>
-                        <td class="" title="DiemHeSo11">@item.GK</td>
-                        <td class="" title="DiemThi1">@item.KT1</td>
-                        <td class="" title="DiemThi2">@item.KT2</td>
-                        <td class="" title="DiemTongKet">@item.tongket</td>
-                        <td class="" title="DiemTinChi">@item.diem4</td>
-                        <td class="" title="DiemChu">@item.diemchu</td>
-                        <td class="" title="XepLoai">@item.xeploai</td>
+                        <td class="text-left"><div style="width:200px !important">@item.tenmh</div></td>
+                        <td style="text-align:center" class="text-center"><div style="">@item.lopdukien</div></td>
+                        <td style="width:100px !important;text-align:center"><div style="display: inline-table">@item.tinchi</div></td>
+                        <td style="text-align:center" title="DiemTieuLuan1">@item.TL</td>
+                        <td style="text-align:center" title="DiemHeSo11">@item.GK</td>
+                        <td style="text-align:center" title="DiemThi1">@item.KT1</td>
+                        <td style="text-align:center" title="DiemThi2">@item.KT2</td>
+                        <td style="text-align:center" title="DiemTongKet">@item.tongket</td>
+                        <td style="text-align:center" title="DiemTinChi">@item.diem4</td>
+                        <td style="text-align:center" title="DiemChu">@item.diemchu</td>
+                        <td style="text-align:center" title="XepLoai">@item.xeploai</td>
                     </tr>
                 }
             }
         }
     </tbody>
 </table>
+    </center>

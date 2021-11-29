@@ -45,6 +45,9 @@
     .auto-style2 {
         margin-top: 40px;
     }
+    .hidden {
+        display:none;
+    }
 </style>
 <script>
     function upload() {
@@ -59,6 +62,7 @@
             data: formData,
             success: function (urlImage) {
                 $('#imgin').attr('src', urlImage);
+                $("#imgin").removeClass('hidden');
             }, error: function (err) {
                 alert('Lỗi khi upload: ' + err.statusText);
             }
@@ -73,7 +77,7 @@
     </div>
     <div id="content" class="content">
         <center>
-            <img id="imgin" src="#" /><br />
+            <img id="imgin" name="imgin" class="hidden" src="#" /><br />
             <input type="file" id="file" onchange="upload()" name="file" />
             <br />
             <input id="detect" type="submit" value="Nhận Diện" />

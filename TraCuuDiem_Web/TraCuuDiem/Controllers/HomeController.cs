@@ -143,16 +143,21 @@ namespace TraCuuDiem.Controllers
 
         public DataTable LayThongTinHocVu(SINHVIEN sv)
         {
-            NGANH nganh = qlDiem.NGANHs.SingleOrDefault(x => x.MANGANH == sv.MANGANH);
-            BACDAOTAO bdt = qlDiem.BACDAOTAOs.SingleOrDefault(x => x.MABACDAOTAO == sv.MABACDAOTAO);
-            LOAIHINHDAOTAO ldt = qlDiem.LOAIHINHDAOTAOs.SingleOrDefault(x => x.MALOAIHINHDAOTAO == sv.MALOAIHINHDAOTAO);
-            NIENKHOA nk = qlDiem.NIENKHOAs.SingleOrDefault(x => x.MANIENKHOA == sv.MANIENKHOA);
             DataTable dt = new DataTable();
             dt.Columns.Add("bacdaotao");
             dt.Columns.Add("loaidaotao");
             dt.Columns.Add("khoahoc");
             dt.Columns.Add("nganh");
-            dt.Rows.Add(bdt.TENBACDAOTAO, ldt.TENLOAIHINHDAOTAO, nk.NAMBATDAU, nganh.TENNGANH);
+            try
+            {
+                NGANH nganh = qlDiem.NGANHs.SingleOrDefault(x => x.MANGANH == sv.MANGANH);
+                BACDAOTAO bdt = qlDiem.BACDAOTAOs.SingleOrDefault(x => x.MABACDAOTAO == sv.MABACDAOTAO);
+                LOAIHINHDAOTAO ldt = qlDiem.LOAIHINHDAOTAOs.SingleOrDefault(x => x.MALOAIHINHDAOTAO == sv.MALOAIHINHDAOTAO);
+                NIENKHOA nk = qlDiem.NIENKHOAs.SingleOrDefault(x => x.MANIENKHOA == sv.MANIENKHOA);
+
+                dt.Rows.Add(bdt.TENBACDAOTAO, ldt.TENLOAIHINHDAOTAO, nk.NAMBATDAU, nganh.TENNGANH);
+            }
+            catch { }
 
             return dt;
         }

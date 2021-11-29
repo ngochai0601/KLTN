@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="quanlydiemModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="quanlydiemEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="BACDAOTAOs" EntityType="quanlydiemModel.BACDAOTAO" />
+    <EntitySet Name="DIEMs" EntityType="quanlydiemModel.DIEM" />
+    <EntitySet Name="HOCKies" EntityType="quanlydiemModel.HOCKY" />
+    <EntitySet Name="KHOAs" EntityType="quanlydiemModel.KHOA" />
+    <EntitySet Name="LOAIHINHDAOTAOs" EntityType="quanlydiemModel.LOAIHINHDAOTAO" />
+    <EntitySet Name="LOPs" EntityType="quanlydiemModel.LOP" />
+    <EntitySet Name="MONHOCs" EntityType="quanlydiemModel.MONHOC" />
+    <EntitySet Name="NGANHs" EntityType="quanlydiemModel.NGANH" />
+    <EntitySet Name="NIENKHOAs" EntityType="quanlydiemModel.NIENKHOA" />
+    <EntitySet Name="SINHVIENs" EntityType="quanlydiemModel.SINHVIEN" />
+    <EntitySet Name="sysdiagrams" EntityType="quanlydiemModel.sysdiagram" />
+    <AssociationSet Name="FK_DAOTAO_SINHVIEN" Association="quanlydiemModel.FK_DAOTAO_SINHVIEN">
+      <End Role="BACDAOTAO" EntitySet="BACDAOTAOs" />
+      <End Role="SINHVIEN" EntitySet="SINHVIENs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DIEM_HOCKY" Association="quanlydiemModel.FK_DIEM_HOCKY">
+      <End Role="HOCKY" EntitySet="HOCKies" />
+      <End Role="DIEM" EntitySet="DIEMs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DIEM_MONHOC" Association="quanlydiemModel.FK_DIEM_MONHOC">
+      <End Role="MONHOC" EntitySet="MONHOCs" />
+      <End Role="DIEM" EntitySet="DIEMs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DIEM_SINHVIEN" Association="quanlydiemModel.FK_DIEM_SINHVIEN">
+      <End Role="SINHVIEN" EntitySet="SINHVIENs" />
+      <End Role="DIEM" EntitySet="DIEMs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOCKY_NIENKHOA" Association="quanlydiemModel.FK_HOCKY_NIENKHOA">
+      <End Role="NIENKHOA" EntitySet="NIENKHOAs" />
+      <End Role="HOCKY" EntitySet="HOCKies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LOP_KHOA" Association="quanlydiemModel.FK_LOP_KHOA">
+      <End Role="KHOA" EntitySet="KHOAs" />
+      <End Role="LOP" EntitySet="LOPs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NGANH_KHOA" Association="quanlydiemModel.FK_NGANH_KHOA">
+      <End Role="KHOA" EntitySet="KHOAs" />
+      <End Role="NGANH" EntitySet="NGANHs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LOAIDT_SINHVIEN" Association="quanlydiemModel.FK_LOAIDT_SINHVIEN">
+      <End Role="LOAIHINHDAOTAO" EntitySet="LOAIHINHDAOTAOs" />
+      <End Role="SINHVIEN" EntitySet="SINHVIENs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MONHOC_LOP" Association="quanlydiemModel.FK_MONHOC_LOP">
+      <End Role="LOP" EntitySet="LOPs" />
+      <End Role="MONHOC" EntitySet="MONHOCs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SINHVIEN_LOP" Association="quanlydiemModel.FK_SINHVIEN_LOP">
+      <End Role="LOP" EntitySet="LOPs" />
+      <End Role="SINHVIEN" EntitySet="SINHVIENs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SINHVIEN_NGANH" Association="quanlydiemModel.FK_SINHVIEN_NGANH">
+      <End Role="NGANH" EntitySet="NGANHs" />
+      <End Role="SINHVIEN" EntitySet="SINHVIENs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NIENKHOA_SINHVIEN" Association="quanlydiemModel.FK_NIENKHOA_SINHVIEN">
+      <End Role="NIENKHOA" EntitySet="NIENKHOAs" />
+      <End Role="SINHVIEN" EntitySet="SINHVIENs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BACDAOTAO">
+    <Key>
+      <PropertyRef Name="MABACDAOTAO" />
+    </Key>
+    <Property Name="MABACDAOTAO" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="TENBACDAOTAO" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="SINHVIENs" Relationship="quanlydiemModel.FK_DAOTAO_SINHVIEN" FromRole="BACDAOTAO" ToRole="SINHVIEN" />
+  </EntityType>
+  <EntityType Name="DIEM">
+    <Key>
+      <PropertyRef Name="MASV" />
+      <PropertyRef Name="MAMH" />
+    </Key>
+    <Property Name="MASV" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="MAMH" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="DIEMTL" Type="Double" />
+    <Property Name="DIEMGK" Type="Double" />
+    <Property Name="DIEMKT1" Type="Double" />
+    <Property Name="DIEMKT2" Type="Double" />
+    <Property Name="MAHOCKY" Type="Int32" />
+    <NavigationProperty Name="HOCKY" Relationship="quanlydiemModel.FK_DIEM_HOCKY" FromRole="DIEM" ToRole="HOCKY" />
+    <NavigationProperty Name="MONHOC" Relationship="quanlydiemModel.FK_DIEM_MONHOC" FromRole="DIEM" ToRole="MONHOC" />
+    <NavigationProperty Name="SINHVIEN" Relationship="quanlydiemModel.FK_DIEM_SINHVIEN" FromRole="DIEM" ToRole="SINHVIEN" />
+  </EntityType>
+  <EntityType Name="HOCKY">
+    <Key>
+      <PropertyRef Name="MAHOCKY" />
+    </Key>
+    <Property Name="MAHOCKY" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MANIENKHOA" Type="Int32" />
+    <Property Name="HK" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="DIEMs" Relationship="quanlydiemModel.FK_DIEM_HOCKY" FromRole="HOCKY" ToRole="DIEM" />
+    <NavigationProperty Name="NIENKHOA" Relationship="quanlydiemModel.FK_HOCKY_NIENKHOA" FromRole="HOCKY" ToRole="NIENKHOA" />
+  </EntityType>
+  <EntityType Name="KHOA">
+    <Key>
+      <PropertyRef Name="MAKH" />
+    </Key>
+    <Property Name="MAKH" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="TENKH" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="LOPs" Relationship="quanlydiemModel.FK_LOP_KHOA" FromRole="KHOA" ToRole="LOP" />
+    <NavigationProperty Name="NGANHs" Relationship="quanlydiemModel.FK_NGANH_KHOA" FromRole="KHOA" ToRole="NGANH" />
+  </EntityType>
+  <EntityType Name="LOAIHINHDAOTAO">
+    <Key>
+      <PropertyRef Name="MALOAIHINHDAOTAO" />
+    </Key>
+    <Property Name="MALOAIHINHDAOTAO" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="TENLOAIHINHDAOTAO" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="SINHVIENs" Relationship="quanlydiemModel.FK_LOAIDT_SINHVIEN" FromRole="LOAIHINHDAOTAO" ToRole="SINHVIEN" />
+  </EntityType>
+  <EntityType Name="LOP">
+    <Key>
+      <PropertyRef Name="MALOP" />
+    </Key>
+    <Property Name="MALOP" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="MAKH" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="KHOA" Relationship="quanlydiemModel.FK_LOP_KHOA" FromRole="LOP" ToRole="KHOA" />
+    <NavigationProperty Name="MONHOCs" Relationship="quanlydiemModel.FK_MONHOC_LOP" FromRole="LOP" ToRole="MONHOC" />
+    <NavigationProperty Name="SINHVIENs" Relationship="quanlydiemModel.FK_SINHVIEN_LOP" FromRole="LOP" ToRole="SINHVIEN" />
+  </EntityType>
+  <EntityType Name="MONHOC">
+    <Key>
+      <PropertyRef Name="MAMH" />
+    </Key>
+    <Property Name="MAMH" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="MALOP" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="TENMH" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SOTC" Type="Int32" />
+    <NavigationProperty Name="DIEMs" Relationship="quanlydiemModel.FK_DIEM_MONHOC" FromRole="MONHOC" ToRole="DIEM" />
+    <NavigationProperty Name="LOP" Relationship="quanlydiemModel.FK_MONHOC_LOP" FromRole="MONHOC" ToRole="LOP" />
+  </EntityType>
+  <EntityType Name="NGANH">
+    <Key>
+      <PropertyRef Name="MANGANH" />
+    </Key>
+    <Property Name="MANGANH" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="MAKH" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="TENNGANH" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="KHOA" Relationship="quanlydiemModel.FK_NGANH_KHOA" FromRole="NGANH" ToRole="KHOA" />
+    <NavigationProperty Name="SINHVIENs" Relationship="quanlydiemModel.FK_SINHVIEN_NGANH" FromRole="NGANH" ToRole="SINHVIEN" />
+  </EntityType>
+  <EntityType Name="NIENKHOA">
+    <Key>
+      <PropertyRef Name="MANIENKHOA" />
+    </Key>
+    <Property Name="MANIENKHOA" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="NAMBATDAU" Type="Int32" />
+    <Property Name="NAMKETTHUC" Type="Int32" />
+    <NavigationProperty Name="HOCKies" Relationship="quanlydiemModel.FK_HOCKY_NIENKHOA" FromRole="NIENKHOA" ToRole="HOCKY" />
+    <NavigationProperty Name="SINHVIENs" Relationship="quanlydiemModel.FK_NIENKHOA_SINHVIEN" FromRole="NIENKHOA" ToRole="SINHVIEN" />
+  </EntityType>
+  <EntityType Name="SINHVIEN">
+    <Key>
+      <PropertyRef Name="MASV" />
+    </Key>
+    <Property Name="MASV" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="MANGANH" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="MALOP" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="HOTEN" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="NGSINH" Type="DateTime" Precision="0" />
+    <Property Name="GTINH" Type="String" MaxLength="3" Unicode="true" FixedLength="false" />
+    <Property Name="NOISINH" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="MABACDAOTAO" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="MALOAIHINHDAOTAO" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="MANIENKHOA" Type="Int32" Nullable="false" />
+    <Property Name="HINH" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="BACDAOTAO" Relationship="quanlydiemModel.FK_DAOTAO_SINHVIEN" FromRole="SINHVIEN" ToRole="BACDAOTAO" />
+    <NavigationProperty Name="DIEMs" Relationship="quanlydiemModel.FK_DIEM_SINHVIEN" FromRole="SINHVIEN" ToRole="DIEM" />
+    <NavigationProperty Name="LOAIHINHDAOTAO" Relationship="quanlydiemModel.FK_LOAIDT_SINHVIEN" FromRole="SINHVIEN" ToRole="LOAIHINHDAOTAO" />
+    <NavigationProperty Name="LOP" Relationship="quanlydiemModel.FK_SINHVIEN_LOP" FromRole="SINHVIEN" ToRole="LOP" />
+    <NavigationProperty Name="NGANH" Relationship="quanlydiemModel.FK_SINHVIEN_NGANH" FromRole="SINHVIEN" ToRole="NGANH" />
+    <NavigationProperty Name="NIENKHOA" Relationship="quanlydiemModel.FK_NIENKHOA_SINHVIEN" FromRole="SINHVIEN" ToRole="NIENKHOA" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_DAOTAO_SINHVIEN">
+    <End Role="BACDAOTAO" Type="quanlydiemModel.BACDAOTAO" Multiplicity="1" />
+    <End Role="SINHVIEN" Type="quanlydiemModel.SINHVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BACDAOTAO">
+        <PropertyRef Name="MABACDAOTAO" />
+      </Principal>
+      <Dependent Role="SINHVIEN">
+        <PropertyRef Name="MABACDAOTAO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DIEM_HOCKY">
+    <End Role="HOCKY" Type="quanlydiemModel.HOCKY" Multiplicity="0..1" />
+    <End Role="DIEM" Type="quanlydiemModel.DIEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOCKY">
+        <PropertyRef Name="MAHOCKY" />
+      </Principal>
+      <Dependent Role="DIEM">
+        <PropertyRef Name="MAHOCKY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DIEM_MONHOC">
+    <End Role="MONHOC" Type="quanlydiemModel.MONHOC" Multiplicity="1" />
+    <End Role="DIEM" Type="quanlydiemModel.DIEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MONHOC">
+        <PropertyRef Name="MAMH" />
+      </Principal>
+      <Dependent Role="DIEM">
+        <PropertyRef Name="MAMH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DIEM_SINHVIEN">
+    <End Role="SINHVIEN" Type="quanlydiemModel.SINHVIEN" Multiplicity="1" />
+    <End Role="DIEM" Type="quanlydiemModel.DIEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SINHVIEN">
+        <PropertyRef Name="MASV" />
+      </Principal>
+      <Dependent Role="DIEM">
+        <PropertyRef Name="MASV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOCKY_NIENKHOA">
+    <End Role="NIENKHOA" Type="quanlydiemModel.NIENKHOA" Multiplicity="0..1" />
+    <End Role="HOCKY" Type="quanlydiemModel.HOCKY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NIENKHOA">
+        <PropertyRef Name="MANIENKHOA" />
+      </Principal>
+      <Dependent Role="HOCKY">
+        <PropertyRef Name="MANIENKHOA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LOP_KHOA">
+    <End Role="KHOA" Type="quanlydiemModel.KHOA" Multiplicity="1" />
+    <End Role="LOP" Type="quanlydiemModel.LOP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHOA">
+        <PropertyRef Name="MAKH" />
+      </Principal>
+      <Dependent Role="LOP">
+        <PropertyRef Name="MAKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NGANH_KHOA">
+    <End Role="KHOA" Type="quanlydiemModel.KHOA" Multiplicity="1" />
+    <End Role="NGANH" Type="quanlydiemModel.NGANH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHOA">
+        <PropertyRef Name="MAKH" />
+      </Principal>
+      <Dependent Role="NGANH">
+        <PropertyRef Name="MAKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LOAIDT_SINHVIEN">
+    <End Role="LOAIHINHDAOTAO" Type="quanlydiemModel.LOAIHINHDAOTAO" Multiplicity="1" />
+    <End Role="SINHVIEN" Type="quanlydiemModel.SINHVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAIHINHDAOTAO">
+        <PropertyRef Name="MALOAIHINHDAOTAO" />
+      </Principal>
+      <Dependent Role="SINHVIEN">
+        <PropertyRef Name="MALOAIHINHDAOTAO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MONHOC_LOP">
+    <End Role="LOP" Type="quanlydiemModel.LOP" Multiplicity="1" />
+    <End Role="MONHOC" Type="quanlydiemModel.MONHOC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOP">
+        <PropertyRef Name="MALOP" />
+      </Principal>
+      <Dependent Role="MONHOC">
+        <PropertyRef Name="MALOP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SINHVIEN_LOP">
+    <End Role="LOP" Type="quanlydiemModel.LOP" Multiplicity="1" />
+    <End Role="SINHVIEN" Type="quanlydiemModel.SINHVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOP">
+        <PropertyRef Name="MALOP" />
+      </Principal>
+      <Dependent Role="SINHVIEN">
+        <PropertyRef Name="MALOP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SINHVIEN_NGANH">
+    <End Role="NGANH" Type="quanlydiemModel.NGANH" Multiplicity="1" />
+    <End Role="SINHVIEN" Type="quanlydiemModel.SINHVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGANH">
+        <PropertyRef Name="MANGANH" />
+      </Principal>
+      <Dependent Role="SINHVIEN">
+        <PropertyRef Name="MANGANH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NIENKHOA_SINHVIEN">
+    <End Role="NIENKHOA" Type="quanlydiemModel.NIENKHOA" Multiplicity="1" />
+    <End Role="SINHVIEN" Type="quanlydiemModel.SINHVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NIENKHOA">
+        <PropertyRef Name="MANIENKHOA" />
+      </Principal>
+      <Dependent Role="SINHVIEN">
+        <PropertyRef Name="MANIENKHOA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

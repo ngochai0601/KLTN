@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/Content/css/Contact.css" rel="stylesheet" />
+    <div class="container" id="container" style="padding-bottom: 10px">
+        <div class="form-container contact-container">
+            <label class="label-input100" for="first-name">Tell us your name *</label>
+            <div class="wrap-input100 validate-input">
+                <input id="full-name" class="input100" type="text" name="full-name" placeholder="Your name">
+                <span class="focus-input100"></span>
+            </div>
+
+            <label class="label-input100" for="email">Enter your email *</label>
+            <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                <input id="email" class="input100" type="text" name="email" placeholder="Eg. example@email.com">
+                <span class="focus-input100"></span>
+            </div>
+            <label class="label-input100" for="phone">Enter phone number</label>
+            <div class="wrap-input100">
+                <input id="phone" class="input100" type="text" name="phone" placeholder="Eg. +1 800 000000">
+                <span class="focus-input100"></span>
+            </div>
+            <label class="label-input100" for="message">Message *</label>
+            <div class="wrap-input100 validate-input" data-validate="Message is required">
+                <textarea id="message" class="input100" name="message" placeholder="Write us a message"></textarea>
+                <span class="focus-input100"></span>
+            </div>
+            <div class="container-contact100-form-btn">
+                <button type="submit" class="contact100-form-btn">
+                    Send Message
+                </button>
+            </div>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h2 style="font-weight: bold">Contact With Us</h2>
+
+                    <br />
+
+                    <div>
+                        <i class="fa fa-phone"></i>&ensp; 0789.789.789
+                    </div>
+
+                    <br />
+                    <br />
+
+                    <div>
+                        <i class="fa fa-clock-o">&nbsp;</i>
+                        Thứ 2 - Thứ 6: 08:00 - 20:00
+                <br />
+                        Thứ 7 - Chủ Nhật 08:00 - 17:00
+                    </div>
+
+                    <br />
+                    <br />
+
+                    <div>
+                        <i class="fa fa-envelope"></i>&ensp; tracuuketqua@gmail.com
+                    </div>
+
+                    <br />
+                    <br />
+
+                    <div>
+                        <i class="fa fa-map-marker"></i>&ensp; 140 Lê Trọng Tấn, Phường Sơn Kỳ, Quận Tân Phú, Thành phố Hồ Chí Minh
+                    </div>
+                    <div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.0602492567173!2d106.62660344958954!3d10.80669759226322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752be2853ce7cd%3A0x4111b3b3c2aca14a!2zMTQwIEzDqiBUcuG7jW5nIFThuqVuLCBTxqFuIEvhu7MsIFTDom4gUGjDuiwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1621252015450!5m2!1svi!2s" width="450" height="300" style="border: 0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

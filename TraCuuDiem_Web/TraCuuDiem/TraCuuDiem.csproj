@@ -184,7 +184,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\Contact.css" />
     <Content Include="Content\css\Score.css" />
+    <Content Include="Content\images\Banner\ComputerVision.png" />
+    <Content Include="Content\images\Banner\facedetect.jpg" />
+    <Content Include="Content\images\Banner\Irisrecognition.jpg" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -287,11 +291,12 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Detect.cshtml" />
     <Content Include="Views\Home\Score.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\hinhsv\" />
-    <Folder Include="Content\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

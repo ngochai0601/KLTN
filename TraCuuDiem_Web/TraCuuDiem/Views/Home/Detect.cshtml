@@ -72,6 +72,7 @@
 </script>
 <form action="/Home/Detect" method="POST" id="form1" runat="server">
     <input id="masv" value="@ViewBag.MASV" style="display:none" />
+    <input id="tb" value="@ViewBag.Loi" style="display:none" />
     <div class="header">
         <h1 class="auto-style1">NHẬN DIỆN GƯƠNG MẶT</h1>
     </div>
@@ -135,6 +136,7 @@
 </form>
 <script>
     var masv = $('#masv').val()
+    var loi = $('#tb').val()
     if (masv == "") {
         $('#info').hide()
         $('#content').show()
@@ -142,5 +144,8 @@
     else {
         $('#info').show()
         $('#content').hide()
+    }
+    if (loi == "error") {
+        alert("Nhận diện thất bại xin thử lại!");
     }
 </script>

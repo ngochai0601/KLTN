@@ -19,6 +19,7 @@ namespace TraCuuDiem.Controllers
         {
             SINHVIEN sv = new SINHVIEN();
             ViewBag.MASV = "";
+            ViewBag.Loi = "";
             return View(sv);
         }
         public static string ConvertImageToBase64String(Image image)
@@ -102,11 +103,20 @@ namespace TraCuuDiem.Controllers
             String retStr = sendPOST(server_path, B64);
             ViewBag.MASV = retStr;
             SINHVIEN sv = LaySinhVien(retStr);
-            DataTable dtb = LayThongTinHocVu(sv);
-            ViewBag.BDT = dtb.Rows[0]["bacdaotao"].ToString();
-            ViewBag.LHDT = dtb.Rows[0]["loaidaotao"].ToString();
-            ViewBag.KH = dtb.Rows[0]["khoahoc"].ToString();
-            ViewBag.NGANH = dtb.Rows[0]["nganh"].ToString();
+            if (sv != null)
+            {
+                DataTable dtb = LayThongTinHocVu(sv);
+                ViewBag.BDT = dtb.Rows[0]["bacdaotao"].ToString();
+                ViewBag.LHDT = dtb.Rows[0]["loaidaotao"].ToString();
+                ViewBag.KH = dtb.Rows[0]["khoahoc"].ToString();
+                ViewBag.NGANH = dtb.Rows[0]["nganh"].ToString();
+            }
+            else
+            {
+                sv = new SINHVIEN();
+                ViewBag.MASV = "";
+                ViewBag.Loi = "error";
+            }
             return View(sv);
         }
         public ActionResult Score(string masv)

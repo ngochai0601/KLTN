@@ -8,3 +8,4 @@
 - lib.txt các thư viện cần cài
 - TraCuuDiem_UD là phần mềm tra cứu điểm 
 - TraCuuDiem_Web là website tra cứu điểm
+- KLTN-Tra cuu KQHT SV HUFI qua hinh anh.docx (word báo cáo những gì đã tìm hiểu)

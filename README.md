@@ -9,3 +9,4 @@
 - TraCuuDiem_UD là phần mềm tra cứu điểm 
 - TraCuuDiem_Web là website tra cứu điểm
 - KLTN-Tra cuu KQHT SV HUFI qua hinh anh.docx (word báo cáo những gì đã tìm hiểu)
+- model.pkl là model được train từ bộ ảnh sinh viên dùng để phân loại khuôn mặt sinh viên

@@ -100,7 +100,8 @@ namespace TraCuuDiem.Controllers
             // Goi len server va tra ve ket qua
             String server_ip = "192.168.1.4";
             String server_path = "http://" + server_ip + ":8080/detect";
-            String retStr = sendPOST(server_path, B64);
+            String retStr = "";
+            retStr = sendPOST(server_path, B64);
             ViewBag.MASV = retStr;
             SINHVIEN sv = LaySinhVien(retStr);
             if (sv != null)

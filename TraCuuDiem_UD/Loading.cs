@@ -23,7 +23,7 @@ namespace DetectFace
         private void timer1_Tick(object sender, EventArgs e)
         {
             x++;
-            if (Detect.sv!=null)
+            if (Detect.sv!=null||x==15)
             {
                 timer1.Stop();
                 this.Close();

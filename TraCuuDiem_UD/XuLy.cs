@@ -165,12 +165,10 @@ namespace DetectFace
             return "Giỏi";
         }
 
-        public static string ConvertImageToBase64String(Image image)
-        {
+        public static string ConvertImageToBase64String(Image image) {
             try
             {
-                using (MemoryStream ms = new MemoryStream())
-                {
+                using (MemoryStream ms = new MemoryStream()) {
                     image.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
                     return Convert.ToBase64String(ms.ToArray());
                 }
@@ -178,25 +176,20 @@ namespace DetectFace
             catch { return null; }
         }
 
-        private String EscapeData(String B64)
-        {
+        private String EscapeData(String B64) {
             int B64_length = B64.Length;
-            if (B64_length <= 32000)
-            {
+            if (B64_length <= 32000) {
                 return Uri.EscapeDataString(B64);
             }
 
             int idx = 0;
             StringBuilder builder = new StringBuilder();
             String substr = B64.Substring(idx, 32000);
-            while (idx < B64_length)
-            {
+            while (idx < B64_length) {
                 builder.Append(Uri.EscapeDataString(substr));
                 idx += 32000;
 
-                if (idx < B64_length)
-                {
-
+                if (idx < B64_length){
                     substr = B64.Substring(idx, Math.Min(32000, B64_length - idx));
                 }
 
@@ -204,22 +197,18 @@ namespace DetectFace
             return builder.ToString();
         }
 
-        private String sendPOST(String url, String B64)
-        {
+        private String sendPOST(String url, String B64) {
             try
             {
                 var request = (HttpWebRequest)WebRequest.Create(url);
                 request.Timeout = 5000;
                 var postData = "image=" + EscapeData(B64);
-
                 var data = Encoding.ASCII.GetBytes(postData);
-
                 request.Method = "POST";
                 request.ContentType = "application/x-www-form-urlencoded";
                 request.ContentLength = data.Length;
 
-                using (var stream = request.GetRequestStream())
-                {
+                using (var stream = request.GetRequestStream()) {
                     stream.Write(data, 0, data.Length);
                 }
 
@@ -235,12 +224,10 @@ namespace DetectFace
             }
         }
 
-        public String Detect(Image image)
-        {
+        public String Detect(Image image) {
             String B64 = ConvertImageToBase64String(image);
 
-            // Goi len server va tra ve ket qua
-            String server_ip = "192.168.1.3";
+            String server_ip = "192.168.1.2";
             String server_path = "http://" + server_ip + ":8080/detect";
             String retStr = sendPOST(server_path, B64);
             return retStr;

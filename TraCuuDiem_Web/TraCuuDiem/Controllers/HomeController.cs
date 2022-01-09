@@ -98,7 +98,7 @@ namespace TraCuuDiem.Controllers
             String B64 = ConvertImageToBase64String(image);
 
             // Goi len server va tra ve ket qua
-            String server_ip = "192.168.1.3";
+            String server_ip = "192.168.1.2";
             String server_path = "http://" + server_ip + ":8080/detect";
             String retStr = "";
             retStr = sendPOST(server_path, B64);

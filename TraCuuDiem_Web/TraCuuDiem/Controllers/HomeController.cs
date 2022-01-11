@@ -66,7 +66,7 @@ namespace TraCuuDiem.Controllers
             try
             {
                 var request = (HttpWebRequest)WebRequest.Create(url);
-                request.Timeout = 5000;
+                request.Timeout = 8000;
                 var postData = "image=" + EscapeData(B64);
 
                 var data = Encoding.ASCII.GetBytes(postData);

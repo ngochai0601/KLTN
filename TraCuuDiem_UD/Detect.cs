@@ -102,10 +102,14 @@ namespace DetectFace
         {
             if (sv == null)
             {
+                label1.Visible = false;
                 pn_ThongTin.Visible = false;
             }
             else
+            {
+                label1.Visible = true;
                 pn_ThongTin.Visible = true;
+            }
         }
 
         private void Detect_Load(object sender, EventArgs e)
